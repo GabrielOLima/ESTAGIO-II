@@ -3,5 +3,3 @@ Django==1.9.6
 gunicorn==19.4.5
 psycopg2==2.6.1
 django-widget-tweaks==1.4.3s
-
--)1wrz7gxxsyai5-$d9&ks2g6_q%i)5!a1trgicm=3fbtj8k_)

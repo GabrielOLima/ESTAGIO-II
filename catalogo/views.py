@@ -5,7 +5,7 @@ from django.views import generic
 from .models import Product, Category
 
 class ProductListView(generic.ListView):
-    model = Product
+    model = Product # é o object.all
     template_name = 'catalogo/product_list.html'
     context_object_name = 'products'
     paginate_by = 3
@@ -14,7 +14,7 @@ class ProductListView(generic.ListView):
 product_list = ProductListView.as_view()
 
 class CategoryListView(generic.ListView):
-    template_name='catalog/category.html'
+    template_name='catalogo/category.html'
     context_object_name = 'product_list'
     paginate_by = 3
     def get_queryset(self):

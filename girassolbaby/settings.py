@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #apps
     'core',
+    'accounts',
     'catalogo',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -154,6 +156,11 @@ EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'faleconosco@girassol.com'
 EMAIL_USE_TLS = True
 
+#User
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'logout'
+AUTH_USER_MODEL = 'accounts.User'
 
 try:
     from .local_settings import *

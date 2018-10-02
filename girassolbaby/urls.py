@@ -14,13 +14,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.conf import settings
 from core import views
 from catalogo import views as views_catalogo
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^contato/$', views.contact, name='contact'),
+    url(r'^entrar/$', login, {'template_name': 'login.html'}, name='login'),
+    url(r'^sair/$', logout, {'next_page': 'index'}, name='logout'),
     url(r'^catalogo/', include('catalogo.urls', namespace='catalogo')),
+    url(r'^conta/', include('accounts.urls', namespace='accounts')),
     url(r'^admin/', admin.site.urls),
 ]
