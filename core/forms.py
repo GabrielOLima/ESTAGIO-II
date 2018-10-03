@@ -15,6 +15,6 @@ class ContactForm(forms.Form):
         message = self.cleaned_data['message']
         message = 'Nome: {0}\nEmail:{1}\n{2}'.format(name, email, message)
         send_mail(
-            'Contato Girassol', message, settings.DEFAULT_FROM_EMAIL,
+            'Contato Girassol Baby', message, settings.DEFAULT_FROM_EMAIL,
             [settings.DEFAULT_FROM_EMAIL]
         )
