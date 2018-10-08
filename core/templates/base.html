@@ -5,9 +5,13 @@
 	<meta charset="utf-8">
 	<title>{% block title %}Girassol Baby{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}" media="screen" />
-	<link rel="stylesheet" href="{% static 'assets/custom.min.css' %}" media="screen" />
+  <link rel="stylesheet" href="{% static 'assets/custom.min.css' %}" media="screen" />
+  <link rel="stylesheet" href="{% static 'assets/business-frontpage.css' %}" media="screen" rel="stylesheet" />
+  
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -29,7 +33,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'catalogo:product_list' %}" id="download">Categorias <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="download">
 				{% for category in categories %}
-				<li><a href="{%  url "catalogo:category" category.slug %}">{{ category }}</a></li>
+				<li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
 				{% endfor %}
               </ul>
             </li>
@@ -57,7 +61,18 @@
         </div>
         {% endfor %}
         {% endblock %}
-		{% block container %}{% endblock %}
+    {% block container %}{% endblock %}
+
+    <header class="business-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="display-3 text-center text-white mt-4">Girassol Baby</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
 		<footer>
 			<div class="row">
 			  <div class="col-lg-12">
@@ -72,7 +87,5 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
 </body>
 </html>
