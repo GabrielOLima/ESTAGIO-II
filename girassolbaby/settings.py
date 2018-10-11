@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #apps
     'core',
-    'accounts',
     'catalogo',
+    'accounts',    
     'checkout',
 
 ]
