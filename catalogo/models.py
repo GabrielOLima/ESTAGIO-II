@@ -28,9 +28,11 @@ class Product(models.Model):
 
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Identificador', max_length=100)
-    category = models.ForeignKey('catalogo.Category', verbose_name='Categoria')
+    category = models.ForeignKey('catalogo.category', verbose_name='Categoria')
     description = models.TextField('Descrição', blank=True)
     price = models.DecimalField('Preço', decimal_places=2, max_digits=8)
+
+
     image = models.ImageField(
         'Imagem', upload_to='products', blank=True, null=True
     )

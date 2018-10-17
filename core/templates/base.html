@@ -7,11 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}" media="screen" />
   <link rel="stylesheet" href="{% static 'assets/custom.min.css' %}" media="screen" />
   <link rel="stylesheet" href="{% static 'assets/business-frontpage.css' %}" media="screen" rel="stylesheet" />
-  
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -49,6 +49,7 @@
               <li><a href="{% url 'login' %}">Entrar</a></li>
               <li><a href="{% url 'accounts:register' %}">Registro</a></li>
               {% endif %}
+							<li><a href="{% url 'checkout:cart_item' %}">Carrinho</a></li>
           </ul>
         </div>
       </div>
