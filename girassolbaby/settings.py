@@ -26,7 +26,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.getenv('SECRET-KEY','123')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -44,25 +44,25 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #apps
     'core',
-    'catalogo',
     'accounts',
+    'catalogo',
     'checkout',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.coauantrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'checkout.middleware.cart_item_middleware',
-
 ]
-
 
 
 ROOT_URLCONF = 'girassolbaby.urls'
@@ -153,7 +153,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #E-mail
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''

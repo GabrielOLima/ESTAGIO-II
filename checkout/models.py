@@ -52,7 +52,7 @@ class OrderManager(models.Manager): #criação do pedido,o usuário tem que est�
             order=order, quantity=cart_item.quantity, product=cart_item.product,
             price=cart_item.price
             ) #item do pedido
-        return order    
+        return order
 
 class Order(models.Model):
 
@@ -60,7 +60,7 @@ class Order(models.Model):
         (0, 'Aguardando Pagamento'),
         (1,'Concluído'),
         (2,'Cancelado'),
-    )
+    )#tupla de tuplas
 
     PAYMENT_OPTIONS_CHOICES = (
         ('deposit' , 'Depósito'),
@@ -71,7 +71,7 @@ class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Usuário')
     status = models.IntegerField(
         'Situação', choices=STATUS_CHOICES, default=0, blank=True
-    )
+    ) #escolher a situação do pedido
     payment_option = models.CharField(
         'Opção de Pagamento', choices=PAYMENT_OPTIONS_CHOICES,max_length=20,
         default='deposit'
@@ -101,7 +101,7 @@ class OrderItem(models.Model):
         verbose_name_plural = 'Itens dos pedidos'
 
 
-    def __str__(self):
+    def __str__(self): #retorna o pedidoe o produto
         return '[{}] {}'.format(self.order, self.product) #product é o nome do produto
 
 def post_save_cart_item(instance, **kwargs): # função de remoção de quantidade do carrinho < 0

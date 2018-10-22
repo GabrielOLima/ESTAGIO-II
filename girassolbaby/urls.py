@@ -15,9 +15,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
-from core import views
-from catalogo import views as views_catalogo
+from django.views.static import serve as serve_static
 from django.contrib.auth.views import login, logout
+
+from core import views
+
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),

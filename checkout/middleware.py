@@ -1,5 +1,5 @@
 # coding=utf-8
-
+# para não perder as informações do carrinho de compra
 from .models import CartItem
 
 

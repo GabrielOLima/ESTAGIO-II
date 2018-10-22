@@ -6,8 +6,11 @@ from django.forms import modelformset_factory
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
+
 from catalogo.models import Product
+
 from checkout.models import CartItem, Order
+
 from django.db import models
 
 
