@@ -57,7 +57,7 @@ Carrinho de Compras
 
                         <td>
                             R$ {{ form.instance.total|floatformat:"2" }}
-                        </td>x'
+                        </td>
                         <td class="text-center">
                             <button value="on" type="submit" name="{{ form.DELETE.html_name }}" class="btn btn-danger btn-sm">remover</button>
                             {{ form.id }}
@@ -69,7 +69,7 @@ Carrinho de Compras
             <p class="text-right">
                 <a href="{% url 'catalogo:product_list' %}" class="pull-left btn btn-default">Continuar Compras</a>
                 <button type="submit" class="btn btn-primary" name="button">Atualizar Carrinho</button></li>
-                <a href="#" class="btn btn-success">Finalizar Compra</a>
+                <a href="{% url 'checkout:checkout' %}" class="btn btn-success">Finalizar Compra</a>
             </p>
         </form>
     </div>
