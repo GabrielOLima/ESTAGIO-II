@@ -7,71 +7,64 @@ Carrinho de Compras
 {% endblock %}
 
 {% block container %}
-<ol class="breadcrumb">
-  <li><a href="{% url 'index' %}">Início</a></li>
-  <li class="active">Carrinho de Compras</li>
-</ol>
+<div class="using-border py-3 remove-padding margin-bottom-20">
+   <div class="inner_breadcrumb  ml-4">
+      <ul class="short_ls">
+         <li>
+            <a href="{% url 'index' %}">Início</a>
+            <span> / </span>
+         </li>
+         <li>Carrinho de Compras</li>
+      </ul>
+   </div>
+</div>
 <div class="page-header">
-    <h1>Carrinho de Compras</h1>
+    <p><strong>Carrinho de Compras</strong></p>
 </div>
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <form class="" action="" method="post">
-            {% csrf_token %}
-            {{ formset.management_form }}
-            <table class="table table-bordered">
-                <thead>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Nome
-                    </th>
-                    <th>
-                        Preço
-                    </th>
-                    <th style="width: 10%;">
-                        Quantidade
-                    </th>
-                    <th>
-                       Total
-                    </th>
-
-                </thead>
-                <tbody>
-                    {% for form in formset %}
-                    <tr>
-                        <td>
-                            {{ form.instance.product.pk }}
-                        </td>
-                        <td>
-                            {{ form.instance.product }}
-                        </td>
-                        <td>
-                            R$ {{ form.instance.price|floatformat:"2" }}
-                        </td>
-
-                        <td>
-                            {% render_field form.quantity class='form-control' %}
-                        </td>
-
-                        <td>
-                            R$ {{ form.instance.total|floatformat:"2" }}
-                        </td>
-                        <td class="text-center">
-                            <button value="on" type="submit" name="{{ form.DELETE.html_name }}" class="btn btn-danger btn-sm">remover</button>
-                            {{ form.id }}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <p class="text-right">
-                <a href="{% url 'catalogo:product_list' %}" class="pull-left btn btn-default">Continuar Compras</a>
-                <button type="submit" class="btn btn-primary" name="button">Atualizar Carrinho</button></li>
-                <a href="{% url 'checkout:checkout' %}" class="btn btn-success">Finalizar Compra</a>
-            </p>
-        </form>
-    </div>
-</div>
+<form class="" action="" method="post">
+  <div class="row">
+      <div class="col-md-10">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+        <div class="row margin-bottom-5">
+            <div class="col-md-2">
+              <img src="http://placehold.it/350x250" width="140" alt="" class="img-rounded"/>
+            </div>
+            <div class="col-md-3">
+                <p>
+                  <strong>{{ form.instance.product.pk }} - {{ form.instance.product }}</strong>
+                </p>
+            </div>
+            <div class="col-md-2">
+                  <span class="label label-success">R$ {{ form.instance.price|floatformat:"2" }}</span>
+            </div>
+            <div class="col-md-2">
+                {% render_field form.quantity class='form-control' %}
+            </div>
+            <div class="col-md-2">
+                R$ {{ form.instance.total|floatformat:"2" }}
+            </div>
+            <div class="col-md-1">
+              <button title="Remover do carrinho" value="on" type="submit" name="{{ form.DELETE.html_name }}" class="btn btn-danger btn-sm">
+                  <span class="fa fa-trash"></span>
+              </button>
+              {{ form.id }}
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-2">
+          <div class="row">
+            <a href="{% url 'catalogo:product_list' %}" class="pull-left btn btn-default btn-block">Continuar Compras</a>
+          </div>
+          <div class="row margin-top-10">
+            <button type="submit" class="btn btn-primary btn-block" name="button">Atualizar Carrinho</button>
+          </div>
+          <div class="row margin-top-10">
+            <a href="{% url 'checkout:checkout' %}" class="btn btn-success btn-block">Finalizar Compra</a>
+          </div>
+      </div>
+  </div>
+</form>
 {% endblock %}

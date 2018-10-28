@@ -35,16 +35,3 @@ class OrderTestCase(TestCase):
         self.assertEquals(order.user, self.user)
         order_item = order.items.get()
         self.assertEquals(order_item.product, self.cart_item.product)
-
-
-   def test_checkou_view(self):
-       response = self.client.get(reverse('checkout:checkout'))
-       redirect_url = '{}?next'.format(
-        reverse(settings.LOGIN_URL)), reverse('checkout:checkout')
-       )
-       self.assertRedirects(response, redirect_url)
-       self.client.login(username=self.user.username, password='123')
-       self.cart_item.cart_key = self.client.session.session.cart_key
-       self.cart_item.save()
-       response = self.client.get(reverse('checkout:checkout'))
-       self.assertTemplateUsed(response,'checkout/checkout.html')

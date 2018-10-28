@@ -8,76 +8,132 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}" media="screen" />
-  <link rel="stylesheet" href="{% static 'assets/custom.min.css' %}" media="screen" />
-  <link rel="stylesheet" href="{% static 'assets/business-frontpage.css' %}" media="screen" rel="stylesheet" />
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" media="screen" />
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css'%}" media="screen"  rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'assets/css/business-frontpage.css' %}" media="screen" rel="stylesheet" />
+
+	<link rel="stylesheet" href="{% static 'assets/css/flexslider.css' %}" type="text/css" media="all" />
+	<!--Shoping cart-->
+	<link rel="stylesheet" href="{% static 'assets/css/shop.css' %}" type="text/css" />
+	<!--//Shoping cart-->
+	<!--stylesheets-->
+	<link href="{% static 'assets/css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+	<!--//stylesheets-->
+	<link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="" class="navbar-brand">Girassol Baby</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="{% url 'index' %}">Início</a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'catalogo:product_list' %}" id="download">Categorias <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="download">
-				{% for category in categories %}
-				<li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
-				{% endfor %}
-              </ul>
-            </li>
-			<li>
-				<a href="{% url 'contact' %}">Contato</a>
-			</li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-              {% if user.is_authenticated %}
-              <li><a href = "">Olá, {{ user }}</a></li>
-              <li><a href="{% url 'logout' %}">Sair</a></li>
-              {% else %}
-              <li><a href="{% url 'login' %}">Entrar</a></li>
-              <li><a href="{% url 'accounts:register' %}">Registro</a></li>
-              {% endif %}
-							<li><a href="{% url 'checkout:cart_item' %}">Carrinho</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="container margin-top">
+	<div class="header-outs" id="home">
+		 <div class="header-bar">
+				<div class="info-top-grid">
+					 <div class="info-contact-agile">
+							<ul>
+								 <li>
+										<span class="fas fa-phone-volume"></span>
+										<p>(85) 9.9999.9999</p>
+								 </li>
+								 <li>
+										<span class="fas fa-envelope"></span>
+										<p><a href="mailto:info@example.com">girassolbaby@gmail.com</a></p>
+								 </li>
+								 <li>
+								 </li>
+							</ul>
+					 </div>
+				</div>
+				<div class="container-fluid">
+					 <div class="hedder-up row">
+							<div class="col-lg-3 col-md-3 logo-head">
+								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
+							</div>
+							<div class="col-lg-5 col-md-6 search-right">
+								 <form class="form-inline my-lg-0">
+										<input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+										<button class="btn" type="submit">Buscar</button>
+								 </form>
+							</div>
+							<div class="col-lg-4 col-md-3 right-side-cart">
+								 <div class="cart-icons">
+										<ul>
+											{% if user.is_authenticated %}
+												<li><a href = "">Bem vindo(a), {{ user }}</a></li>
+												<li class="toyscart toyscart2 cart cart box_1">
+														<a href="{% url 'checkout:cart_item' %}" title="Carrinho de Compras" class="top_toys_cart">
+															<span class="fa fa-cart-arrow-down"></span>
+														</a>
+												</li>
+												<li><a href="{% url 'logout' %}" title="Sair"><span class="fa fa-sign-out-alt" ></span></a></li>
+											{% else %}
+												<li><a href="{% url 'login' %}" title="Entrar"><span class="fa fa-sign-in-alt"></span></a></li>
+												<li><a href="{% url 'accounts:register' %}" title="Registro"><span class="fa fa-user"></span></a></li>
+												<li><a href="{% url 'checkout:cart_item' %}" title="Carrinho de Compras"><span class="fa fa-shopping-cart"> </span></a></li>
+
+											{% endif %}
+
+										</ul>
+								 </div>
+							</div>
+					 </div>
+				</div>
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<div class="navbar-header">
+							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="navbar-collapse collapse" id="navbar-main">
+							<ul class="nav navbar-nav">
+								<li>
+									<a href="{% url 'catalogo:product_list' %}" class="nav-link">Inicio</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'catalogo:product_list' %}" id="download">Categorias <span class="caret"></span></a>
+									<div class="dropdown-menu" aria-labelledby="download">
+
+											{% for category in categories %}
+											<a href="{{ category.get_absolute_url }}" class="nav-link">{{ category }}</a>
+											{% endfor %}
+									</div>
+								</li>
+								<li>
+									<a href="{% url 'contact' %}" class="nav-link">Contato</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--//headder-->
+		<!-- banner -->
+		<div class="inner_page-banner one-img">
+		</div>
+
+    <div class="container-fluid margin-top">
         {% block messages %}
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert" >
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+					{{ message }}
         </div>
         {% endfor %}
         {% endblock %}
-    {% block container %}{% endblock %}
-
-
-		<footer>
-			<div class="row">
-			  <div class="col-lg-12">
-			    <ul class="list-unstyled">
-			      <li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
-			      <li><a href="{% url 'index' %}">Início</a></li>
-			      <li><a href="{% url 'catalogo:product_list' %}"s>Produtos</a></li>
-			      <li><a href="{% url 'contact' %}">Contato</a></li>
-			      <li><a href="">Termos e Privacidade</a></li>
-			    </ul>
-			  </div>
-			</div>
-		</footer>
+    		{% block container %}
+		{% endblock %}
 	</div>
+	<footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
+		 <div class="copy-agile-right" style="height:50px; padding:1%;">
+				<p>
+					 © 2018 Girassol Baby. Todos os direitos reservados
+					 	<a href="#top" class="pull-right">Voltar ao Topo</a>
+				</p>
+		 </div>
+	</footer>
 </body>
 </html>
