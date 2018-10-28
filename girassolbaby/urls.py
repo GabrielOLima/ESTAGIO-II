@@ -18,11 +18,14 @@ from django.conf import settings
 from django.views.static import serve as serve_static
 from django.contrib.auth.views import login, logout
 
+from catalogo.views import product_list
 from core import views
 
 
+
+
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', product_list, name='index'),
     url(r'^contato/$', views.contact, name='contact'),
     url(r'^entrar/$', login, {'template_name': 'login.html'}, name='login'),
     url(r'^sair/$', logout, {'next_page': 'index'}, name='logout'),
