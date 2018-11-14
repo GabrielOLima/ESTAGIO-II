@@ -140,12 +140,12 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500) #configuração heroku
+DATABASES['default'].update(db_from_env) #configuração heroku
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  #configuração heroku
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] #configuração heroku
 
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles')
