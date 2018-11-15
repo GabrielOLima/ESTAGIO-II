@@ -184,6 +184,9 @@ PAGSEGURO_TOKEN='24B5685794014BBEA93C5D7132C57EE7'
 PAGSEGURO_EMAIL='gabrieloliveiraelima@gmail.com'
 PAGSEGURO_SANDBOX = True
 
+#PAYPAL_TEST = True
+#PAYPAL_EMAIL = 'gabrieloliveiraelima@gmail.com'
+
 THUMBNAIL_ALIASES = {
     '': {
         'product_image': {'size': (285, 160), 'crop': True},
