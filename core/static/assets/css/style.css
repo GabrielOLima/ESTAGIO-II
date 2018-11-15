@@ -488,7 +488,8 @@ background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 -ms-background-size: cover;
-min-height: none;
+height: 200px;
+width: 105%;
 
 }
 ul.short_ls li a {
@@ -997,23 +998,24 @@ filter: alpha(opacity=0);
 }
 @media(max-width:1366px){
 .title {
-    font-size: 41px;
+    font-size: 36px;
 }
 .hedder-up, .info-top-grid, nav.navbar.navbar-expand-lg.navbar-light {
-    padding: 1em 2em;
+    padding: 1em 1em;
 }
 .navbar-light .navbar-nav .nav-link {
     letter-spacing: 1px;
     padding: 6px 38px;
 }
 .search-right input[type="search"] {
-    width: 80%;
+    width: 90%;
 }
 .search-right button {
-    width: 19%;
+    width:10%;
+    padding: 3px 6px;
 }
 .callbacks_nav, .callbacks_nav.next {
-    background-size: 35px;
+    background-size: 50px;
 }
 .map-info-right iframe {
     height: 22.5em;

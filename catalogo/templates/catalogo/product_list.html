@@ -17,3 +17,20 @@
 </div>
 {% pagination request paginator page_obj %}
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+$(function(){
+    $('.cart-item-add').on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'), #pegar o href
+            dataType: 'json', #tipoderetorno
+            success: function(data, textStatus, jqXHR){
+                alert(data.message);
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

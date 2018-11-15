@@ -42,18 +42,18 @@
 							</ul>
 					 </div>
 				</div>
-				<div class="container-fluid" >
-					 <div class="hedder-up row">
-							<div class="col-lg-3 col-md-3 logo-head" >
+				<div class="container-fluid"  >
+					 <div class="hedder-up row" style="width= 100%">
+							<div class="col-lg-4 col-md-2 logo-head"  >
 								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
 							</div>
-							<div class="col-lg-5 col-md-6 search-right">
+							<div class="col-lg-8 col-md-10 search-right">
 								 <form class="form-inline my-lg-0" role="search" action="{% url 'catalogo:product_list' %}">
 										<input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="q">
 										<button class="btn" type="submit">Buscar</button>
 								 </form>
 							</div>
-							<div class="col-lg-4 col-md-3 right-side-cart">
+							<div class="col-lg-6 col-md-10 right-side-cart">
 								 <div class="cart-icons">
 										<ul>
 											{% if user.is_authenticated %}
@@ -135,5 +135,10 @@
 				</p>
 		 </div>
 	</footer>
+</div>
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+	{% block scripts %}{% endblock %}
+
 </body>
 </html>

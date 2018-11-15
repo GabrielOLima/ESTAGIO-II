@@ -26,9 +26,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.getenv('SECRET-KEY','123')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -192,6 +193,44 @@ THUMBNAIL_ALIASES = {
         'product_image': {'size': (285, 160), 'crop': True},
         'cart_image': {'size': (140, 140), 'crop': True},
     },
+}
+
+
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'checkout.views': {
+            'class': 'logging.FileHandler',
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'filename': os.path.join(BASE_DIR, 'checkout.views.log'),
+        }
+    },
+    'loggers': {
+        'checkout.views': {
+            'handlers': ['checkout.views'],
+            'level': 'DEBUG',
+        }
+    }
 }
 
 try:
