@@ -25,8 +25,8 @@
 </head>
 <body>
 	<div class="header-outs" id="home">
-		 <div class="header-bar">
-				<div class="info-top-grid">
+		 <div class="header-bar" >
+				<div class="info-top-grid" style="height:-15px;">
 					 <div class="info-contact-agile">
 							<ul>
 								 <li>
@@ -42,14 +42,14 @@
 							</ul>
 					 </div>
 				</div>
-				<div class="container-fluid">
+				<div class="container-fluid" >
 					 <div class="hedder-up row">
-							<div class="col-lg-3 col-md-3 logo-head">
+							<div class="col-lg-3 col-md-3 logo-head" >
 								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
 							</div>
 							<div class="col-lg-5 col-md-6 search-right">
-								 <form class="form-inline my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+								 <form class="form-inline my-lg-0" role="search" action="{% url 'catalogo:product_list' %}">
+										<input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="q">
 										<button class="btn" type="submit">Buscar</button>
 								 </form>
 							</div>
@@ -110,7 +110,7 @@
 		</div>
 		<!--//headder-->
 		<!-- banner -->
-		<div class="inner_page-banner one-img">
+		<div class="inner_page-banner one-img" >
 		</div>
 
     <div class="container-fluid margin-top">

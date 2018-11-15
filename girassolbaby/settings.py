@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #libs
     'widget_tweaks',
+    'easy_thumbnails',
     #apps
     'core',
     'accounts',
@@ -177,6 +178,17 @@ MESSAGE_TAGS = {
     messages_constants.SUCCESS: 'success',
     messages_constants.WARNING: 'warning',
     messages_constants.ERROR: 'danger',
+}
+
+PAGSEGURO_TOKEN='24B5685794014BBEA93C5D7132C57EE7'
+PAGSEGURO_EMAIL='gabrieloliveiraelima@gmail.com'
+PAGSEGURO_SANDBOX = True
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'product_image': {'size': (285, 160), 'crop': True},
+        'cart_image': {'size': (140, 140), 'crop': True},
+    },
 }
 
 try:

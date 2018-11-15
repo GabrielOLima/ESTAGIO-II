@@ -110,6 +110,7 @@ margin: 0px;
 }
 .hedder-up {
     background: #000;
+    width: 80%;
 }
 .search-right,.right-side-cart {
     margin-top: 9px;
@@ -487,7 +488,8 @@ background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 -ms-background-size: cover;
-min-height: 350px;
+min-height: none;
+
 }
 ul.short_ls li a {
     color: #ffffff;
@@ -1593,7 +1595,7 @@ footer{
 }
 
 .remove-padding{
-  margin-left: -15px;
+  margin-left: -5px;
   width: 102.4%;
 }
 
