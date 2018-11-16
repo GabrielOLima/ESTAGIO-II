@@ -43,18 +43,18 @@
 					 </div>
 				</div>
 				<div class="container-fluid"  >
-					 <div class="hedder-up row" style="width= 100%">
+					 <div class="hedder-up row" style="width:110%; padding:1%;">
 							<div class="col-lg-4 col-md-2 logo-head"  >
 								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
 							</div>
-							<div class="col-lg-8 col-md-10 search-right">
+							<div class="col-lg-8 col-md-12 search-right">
 								 <form class="form-inline my-lg-0" role="search" action="{% url 'catalogo:product_list' %}">
-										<input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="q">
-										<button class="btn" type="submit">Buscar</button>
+										<input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="q" style="width:40%; padding:1%; margin-left:-180px; margin-top:10px;">
+										<button class="btn" type="submit" style="padding:1%; margin-top:10px;">Buscar</button>
 								 </form>
 							</div>
-							<div class="col-lg-6 col-md-10 right-side-cart">
-								 <div class="cart-icons">
+							<div class="col-lg-6 col-md-12 right-side-cart">
+								 <div class="cart-icons" style="padding:1%; margin-left:300px;">
 										<ul>
 											{% if user.is_authenticated %}
 												<li><a href = "">Bem vindo(a), {{ user }}</a></li>

@@ -839,6 +839,7 @@ color:#ea1d5d;
     -webkit-transition: 0.5s all;
     transition: 0.5s all;
     -moz-transition: 0.5s all;
+    
 }
 .icons ul li a span:hover,
 .cart-icons ul li span:hover
@@ -1012,7 +1013,7 @@ filter: alpha(opacity=0);
 }
 .search-right button {
     width:10%;
-    padding: 3px 6px;
+    padding: px 6px;
 }
 .callbacks_nav, .callbacks_nav.next {
     background-size: 50px;
