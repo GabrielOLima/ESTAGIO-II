@@ -192,6 +192,7 @@ THUMBNAIL_ALIASES = {
     '': {
         'product_image': {'size': (285, 160), 'crop': True},
         'cart_image': {'size': (140, 140), 'crop': True},
+        'image_product': {'size': (300, 300), 'crop': False},
     },
 }
 

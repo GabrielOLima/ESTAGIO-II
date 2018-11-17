@@ -30,9 +30,6 @@ Carrinho de Compras
         {{ formset.management_form }}
         {% for form in formset %}
         <div class="row margin-bottom-5">
-            <div class="col-md-2">
-              <img src="http://placehold.it/350x250" width="140" alt="" class="img-rounded"/>
-            </div>
             <div class="col-md-3">
                 <p>
                   <strong>{{ form.instance.product.pk }} - {{ form.instance.product }}</strong>
