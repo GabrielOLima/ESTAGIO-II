@@ -26,15 +26,15 @@
 <body>
 	<div class="header-outs" id="home">
 		 <div class="header-bar" >
-				<div class="info-top-grid" style="height:-15px;">
-					 <div class="info-contact-agile">
+				<div class="info-top-grid" >
+					 <div class="info-contact-agile" >
 							<ul>
 								 <li>
-										<span class="fas fa-phone-volume"></span>
+										<span class="fas fa-phone-volume" ></span>
 										<p>(85) 9.9999.9999</p>
 								 </li>
 								 <li>
-										<span class="fas fa-envelope"></span>
+										<span class="fas fa-envelope" ></span>
 										<p><a href="mailto:info@example.com">girassolbaby@gmail.com</a></p>
 								 </li>
 								 <li>
@@ -43,27 +43,27 @@
 					 </div>
 				</div>
 				<div class="container-fluid"  >
-					 <div class="hedder-up row" style="width:110%; padding:1%;">
-							<div class="col-lg-4 col-md-2 logo-head"  >
+					 <div class="hedder-up row">
+							<div class="col-lg-3 col-md-3 logo-head"  >
 								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
 							</div>
-							<div class="col-lg-8 col-md-12 search-right">
+							<div class="col-lg-5 col-md-6 search-right">
 								 <form class="form-inline my-lg-0" role="search" action="{% url 'catalogo:product_list' %}">
-										<input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="q" style="width:40%; padding:1%; margin-left:-180px; margin-top:10px;">
-										<button class="btn" type="submit" style="padding:1%; margin-top:10px;">Buscar</button>
+										<input class="form-control mr-sm-6" type="text" placeholder="Buscar" name="q" >
+										<button class="btn" type="submit">Buscar</button>
 								 </form>
 							</div>
-							<div class="col-lg-6 col-md-12 right-side-cart">
-								 <div class="cart-icons" style="padding:1%; margin-left:300px;">
+							<div class="col-lg-4 col-md-3 right-side-cart">
+								 <div class="cart-icons" >
 										<ul>
 											{% if user.is_authenticated %}
 												<li><a href = "">Bem vindo(a), {{ user }}</a></li>
 												<li class="toyscart toyscart2 cart cart box_1">
 														<a href="{% url 'checkout:cart_item' %}" title="Carrinho de Compras" class="top_toys_cart">
-															<span class="fa fa-cart-arrow-down"></span>
+															<span class="fa fa-cart-arrow-down" ></span>
 														</a>
 												</li>
-												<li><a href="{% url 'logout' %}" title="Sair"><span class="fa fa-sign-out-alt" ></span></a></li>
+												<li><a href="{% url 'logout' %}" title="Sair"><span class="fa fa-sign-out-alt"></span></a></li>
 											{% else %}
 												<li><a href="{% url 'login' %}" title="Entrar"><span class="fa fa-sign-in-alt"></span></a></li>
 												<li><a href="{% url 'accounts:register' %}" title="Registro"><span class="fa fa-user"></span></a></li>
@@ -76,7 +76,7 @@
 							</div>
 					 </div>
 				</div>
-				<nav class="navbar navbar-expand-lg navbar-light">
+				<nav class="navbar navbar-expand-lg navbar-light" style="margin-top:80px;">
 					<div class="container">
 						<div class="navbar-header">
 							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -136,7 +136,9 @@
 		 </div>
 	</footer>
 </div>
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     <script src="{% static 'assets/bootstrap.min.js' %}"></script>
 	{% block scripts %}{% endblock %}
 

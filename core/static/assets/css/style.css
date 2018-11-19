@@ -98,22 +98,23 @@ ul {
 .header-bar {
     position: absolute;
     width: 100%;
-	z-index: 99;
+	-z-index: 99;
 }
 h1 a.navbar-brand {
 font-size:32px;
-color: #fff !important;
+color: #FFEBCD !important;
 text-transform:capitalize;
-font-weight: 400;
-letter-spacing: 2px;
+font-weight: 200;
+letter-spacing: 1px;
 margin: 0px;
 }
 .hedder-up {
-    background: #000;
-    width: 80%;
+    background: transparent;
+    width: 100%;
 }
 .search-right,.right-side-cart {
-    margin-top: 9px;
+    margin-top: 30px;
+
 }
 /*--headder info-contact --*/
 .info-top-grid,nav.navbar.navbar-expand-lg.navbar-light {
@@ -145,7 +146,8 @@ margin: 0px;
     background:rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
-	outline:none;
+	  outline:none;
+
 }
 /*--//headder info-contact --*/
 .search-right input[type="search"] {
@@ -833,13 +835,14 @@ color:#ea1d5d;
     height: 37px;
     line-height: 35px;
     text-align: center;
-    margin: 0px 5px;
+  -margin: 2px 5px;
+    -margin-left: 120px;
     color:#ea1d5d;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     transition: 0.5s all;
     -moz-transition: 0.5s all;
-    
+
 }
 .icons ul li a span:hover,
 .cart-icons ul li span:hover
@@ -1002,11 +1005,11 @@ filter: alpha(opacity=0);
     font-size: 36px;
 }
 .hedder-up, .info-top-grid, nav.navbar.navbar-expand-lg.navbar-light {
-    padding: 1em 1em;
+    padding: 0em 0em;
 }
 .navbar-light .navbar-nav .nav-link {
-    letter-spacing: 1px;
-    padding: 6px 38px;
+    letter-spacing: 2px;
+    padding: 2px 15px;
 }
 .search-right input[type="search"] {
     width: 90%;
@@ -1152,6 +1155,7 @@ h4.typo-sub-heading {
 	}
 h1 a.navbar-brand {
     font-size: 30px;
+
 	}
 	div#navbarSupportedContent {
 background:transparent;
@@ -1231,6 +1235,7 @@ background: #fff;
     height: 35px;
     line-height: 32px;
     margin: 0px 3px;
+    margin-left: 300px;
 }
 .banner-right-icon h4, .clients-says-w3layouts h4 {
     font-size: 21px;
@@ -1301,6 +1306,7 @@ font-size: 22px;
 }
 h1 a.navbar-brand {
     font-size: 28px;
+
 }
 .toys-grids-upper {
     width: 97%;
@@ -1363,7 +1369,8 @@ h1 a.navbar-brand {
 }
 @media(max-width:640px){
 	h1 a.navbar-brand {
-    font-size: 26px;
+    font-size: 16px;
+
 }
 .info-contact-agile ul li p, .info-contact-agile ul li p a {
     font-size: 13px;
@@ -1375,12 +1382,12 @@ h3.typo-main-heading {
     font-size: 2em;
 }
 .register-form input[type="text"], .register-form input[type="email"], .register-form input[type="password"] {
-    padding: 9px 7px;
+    padding: 7px 7px;
 }
 }
-@media(max-width:600px){
+@media(max-width:800px){
 .hedder-up, .info-top-grid, nav.navbar.navbar-expand-lg.navbar-light {
-    padding: 1em 1em;
+    padding: 0em 1em;
 }
 .navbar-light .navbar-nav .nav-link {
     font-size: 14px;
@@ -1584,6 +1591,7 @@ footer{
     color: #ffffff;
     background-color: #ff3b9f;
     border-color: #ff3b9f;
+
 
 }
 

@@ -3,9 +3,9 @@
     <div class="thumbnail">
         <a href="{{ product.get_absolute_url }}">
             {% if product.image %}
-            <img src="{{ product.image|thumbnail_url:'product_image' }}" alt="" />
+            <img src="{{ product.image|thumbnail_url:'product_image' }}"  alt="" />
             {% else %}
-            <img src="http://placehold.it/350x250" alt="" />
+            <img src="http://placehold.it/350x250" width="160"alt="" />
             {% endif %}
         </a>
         <div class="caption">

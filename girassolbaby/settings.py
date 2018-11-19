@@ -190,7 +190,7 @@ PAGSEGURO_SANDBOX = True
 
 THUMBNAIL_ALIASES = {
     '': {
-        'product_image': {'size': (285, 160), 'crop': True},
+        'product_image': {'size': (160, 160), 'crop': True},
         'cart_image': {'size': (140, 140), 'crop': True},
     },
 }
