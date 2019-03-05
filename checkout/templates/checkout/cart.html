@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% load widget_tweaks %}
 
 {% block title %}
 Carrinho de Compras
 {% endblock %}
+
 
 {% block container %}
 <div class="using-border py-3 remove-padding margin-bottom-20">
@@ -28,9 +30,12 @@ Carrinho de Compras
         {{ formset.management_form }}
         {% for form in formset %}
         <div class="row margin-bottom-5">
+<<<<<<< HEAD
             <div class="col-md-2">
-              <img src="http://placehold.it/350x250" width="140" alt="" class="img-rounded"/>
+                <img src="http://placehold.it/350x250" width="160"alt="" />
             </div>
+=======
+>>>>>>> 99bbe08c61953a672a468eda7cf42505ab782fd0
             <div class="col-md-3">
                 <p>
                   <strong>{{ form.instance.product.pk }} - {{ form.instance.product }}</strong>
@@ -58,7 +63,7 @@ Carrinho de Compras
           <div class="row">
             <a href="{% url 'catalogo:product_list' %}" class="pull-left btn btn-default btn-block">Continuar Compras</a>
           </div>
-          <div class="row margin-top-10">
+          <div class="row margin-top-8">
             <button type="submit" class="btn btn-primary btn-block" name="button">Atualizar Carrinho</button>
           </div>
           <div class="row margin-top-10">

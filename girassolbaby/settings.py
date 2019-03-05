@@ -31,6 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #libs
     'widget_tweaks',
+    'easy_thumbnails',
     #apps
     'core',
     'accounts',
@@ -140,12 +142,12 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500) #configuração heroku
+DATABASES['default'].update(db_from_env) #configuração heroku
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  #configuração heroku
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] #configuração heroku
 
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles')
@@ -177,6 +179,59 @@ MESSAGE_TAGS = {
     messages_constants.SUCCESS: 'success',
     messages_constants.WARNING: 'warning',
     messages_constants.ERROR: 'danger',
+}
+
+PAGSEGURO_TOKEN='24B5685794014BBEA93C5D7132C57EE7'
+PAGSEGURO_EMAIL='gabrieloliveiraelima@gmail.com'
+PAGSEGURO_SANDBOX = True
+
+#PAYPAL_TEST = True
+#PAYPAL_EMAIL = 'gabrieloliveiraelima@gmail.com'
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'product_image': {'size': (160, 160), 'crop': True},
+        'cart_image': {'size': (140, 140), 'crop': True},
+        'image_product': {'size': (300, 300), 'crop': False},
+    },
+}
+
+
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'checkout.views': {
+            'class': 'logging.FileHandler',
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'filename': os.path.join(BASE_DIR, 'checkout.views.log'),
+        }
+    },
+    'loggers': {
+        'checkout.views': {
+            'handlers': ['checkout.views'],
+            'level': 'DEBUG',
+        }
+    }
 }
 
 try:

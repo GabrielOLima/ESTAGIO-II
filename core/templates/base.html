@@ -25,16 +25,21 @@
 </head>
 <body>
 	<div class="header-outs" id="home">
-		 <div class="header-bar">
+		 <div class="header-bar" >
+<<<<<<< HEAD
+				<div class="info-top-grid" >
+					 <div class="info-contact-agile" >
+=======
 				<div class="info-top-grid">
 					 <div class="info-contact-agile">
+>>>>>>> 99bbe08c61953a672a468eda7cf42505ab782fd0
 							<ul>
 								 <li>
-										<span class="fas fa-phone-volume"></span>
+										<span class="fas fa-phone-volume" ></span>
 										<p>(85) 9.9999.9999</p>
 								 </li>
 								 <li>
-										<span class="fas fa-envelope"></span>
+										<span class="fas fa-envelope" ></span>
 										<p><a href="mailto:info@example.com">girassolbaby@gmail.com</a></p>
 								 </li>
 								 <li>
@@ -42,28 +47,33 @@
 							</ul>
 					 </div>
 				</div>
-				<div class="container-fluid">
+				<div class="container-fluid"  >
+<<<<<<< HEAD
 					 <div class="hedder-up row">
-							<div class="col-lg-3 col-md-3 logo-head">
+							<div class="col-lg-3 col-md-3 logo-head"  >
+=======
+					 <div class="hedder-up row" style="width:110%; padding:1%; height:auto">
+							<div class="col-lg-4 col-md-2 logo-head"  >
+>>>>>>> 99bbe08c61953a672a468eda7cf42505ab782fd0
 								 <h1><a class="navbar-brand" href="{% url 'index' %}">Girassol Baby</a></h1>
 							</div>
 							<div class="col-lg-5 col-md-6 search-right">
-								 <form class="form-inline my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+								 <form class="form-inline my-lg-0" role="search" action="{% url 'catalogo:product_list' %}">
+										<input class="form-control mr-sm-6" type="text" placeholder="Buscar" name="q" >
 										<button class="btn" type="submit">Buscar</button>
 								 </form>
 							</div>
 							<div class="col-lg-4 col-md-3 right-side-cart">
-								 <div class="cart-icons">
+								 <div class="cart-icons" >
 										<ul>
 											{% if user.is_authenticated %}
 												<li><a href = "">Bem vindo(a), {{ user }}</a></li>
 												<li class="toyscart toyscart2 cart cart box_1">
 														<a href="{% url 'checkout:cart_item' %}" title="Carrinho de Compras" class="top_toys_cart">
-															<span class="fa fa-cart-arrow-down"></span>
+															<span class="fa fa-cart-arrow-down" ></span>
 														</a>
 												</li>
-												<li><a href="{% url 'logout' %}" title="Sair"><span class="fa fa-sign-out-alt" ></span></a></li>
+												<li><a href="{% url 'logout' %}" title="Sair"><span class="fa fa-sign-out-alt"></span></a></li>
 											{% else %}
 												<li><a href="{% url 'login' %}" title="Entrar"><span class="fa fa-sign-in-alt"></span></a></li>
 												<li><a href="{% url 'accounts:register' %}" title="Registro"><span class="fa fa-user"></span></a></li>
@@ -76,7 +86,7 @@
 							</div>
 					 </div>
 				</div>
-				<nav class="navbar navbar-expand-lg navbar-light">
+				<nav class="navbar navbar-expand-lg navbar-light" style="margin-top:80px;">
 					<div class="container">
 						<div class="navbar-header">
 							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -127,13 +137,23 @@
     		{% block container %}
 		{% endblock %}
 	</div>
-	<footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
-		 <div class="copy-agile-right" style="height:50px; padding:1%;">
+	<footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center" style="padding-bottom: 600px;">
+		 <div class="copy-agile-right">
 				<p>
 					 © 2018 Girassol Baby. Todos os direitos reservados
 					 	<a href="#top" class="pull-right">Voltar ao Topo</a>
 				</p>
 		 </div>
 	</footer>
+</div>
+<<<<<<< HEAD
+
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+=======
+>>>>>>> 99bbe08c61953a672a468eda7cf42505ab782fd0
+	{% block scripts %}{% endblock %}
+
 </body>
 </html>
